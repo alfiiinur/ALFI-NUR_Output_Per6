@@ -12,7 +12,7 @@
 <body>
     <div class="container mt-3">
         <h2>INPUT DATA MAHASISWA</h2>
-        <form method="POST" action="index.php">
+        <form method="POST" action="">
             <div class="mb-3  mt-3">
                 <input type="text" class="form-control" id="nama" placeholder="Nama Mahasiswa" name="nama_mhs">
             </div>

@@ -14,6 +14,15 @@ if(isset($_POST['nama_mhs']))
     header("Refresh:0");
 }
 
+if(isset($_GET['id']))
+{
+    $id = $_GET['id'];
+    $sqlDel = "DELETE FROM tbl_mhs 
+            WHERE id_mhs = $id";
+    mysqli_query($koneksi, $sqlDel);
+    header("Refresh:0, url=index.php");
+
+}
 
 ?>
 
@@ -58,9 +67,16 @@ if(isset($_POST['nama_mhs']))
                     <td><?php echo $baris['alamat_mhs']; ?></td>
                     <td><?php echo $baris['status_prodi']; ?></td>
                     <td>
-                        <button type="button" class="btn btn-success">Ubah</button>
-                        <button type="button" class="btn btn-danger">Hapus</button>
+                        <a href="update.php?id=<?php echo $baris['id_mhs'];?>">
+                            <button type="button" class="btn btn-success">Ubah</button>
+                        </a>
+
+                        <a href="index.php?id=<?php echo $baris['id_mhs'];?>">
+                            <button type="button" class="btn btn-danger">Hapus</button>
+                        </a>
+
                     </td>
+
 
                     <?php } ?>
             </tbody>
