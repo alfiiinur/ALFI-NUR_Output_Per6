@@ -1,29 +1,6 @@
 <?php 
 include 'koneksi.php';
 
-if(isset($_POST['nama_mhs']))
-{
-    $nama = $_POST['nama_mhs'];
-    $alamat = $_POST['alamat_mhs'];
-    $prodi = $_POST['Prodi'];
-    $statusprodi = $_POST['status'];
-    $insert = "INSERT INTO tbl_mhs (id_prodi, nama_mhs, alamat_mhs)
-            VALUES($prodi, '$nama', '$alamat' )";
-    
-    mysqli_query($koneksi, $insert);
-    header("Refresh:0");
-}
-
-if(isset($_GET['id']))
-{
-    $id = $_GET['id'];
-    $sqlDel = "DELETE FROM tbl_mhs 
-            WHERE id_mhs = $id";
-    mysqli_query($koneksi, $sqlDel);
-    header("Refresh:0, url=index.php");
-
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -71,7 +48,7 @@ if(isset($_GET['id']))
                             <button type="button" class="btn btn-success">Ubah</button>
                         </a>
 
-                        <a href="index.php?id=<?php echo $baris['id_mhs'];?>">
+                        <a href="delet.php?id=<?php echo $baris['id_mhs'];?>">
                             <button type="button" class="btn btn-danger">Hapus</button>
                         </a>
 

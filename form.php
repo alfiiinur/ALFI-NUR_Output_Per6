@@ -1,3 +1,25 @@
+<?php
+include "koneksi.php";
+
+
+if(isset($_POST['nama_mhs']))
+{
+    $nama = $_POST['nama_mhs'];
+    $alamat = $_POST['alamat_mhs'];
+    $prodi = $_POST['Prodi'];
+    $statusprodi = $_POST['status'];
+    $insert = "INSERT INTO tbl_mhs (id_prodi, nama_mhs, alamat_mhs)
+            VALUES($prodi, '$nama', '$alamat' )";
+    
+    mysqli_query($koneksi, $insert);
+    header("Refresh:0 , url=index.php");
+
+}
+
+
+
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -12,7 +34,7 @@
 <body>
     <div class="container mt-3">
         <h2>INPUT DATA MAHASISWA</h2>
-        <form method="POST" action="">
+        <form method="POST" action="form.php">
             <div class="mb-3  mt-3">
                 <input type="text" class="form-control" id="nama" placeholder="Nama Mahasiswa" name="nama_mhs">
             </div>
