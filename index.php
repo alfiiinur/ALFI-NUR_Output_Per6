@@ -28,7 +28,6 @@ include 'koneksi.php';
                     <th>NAMA MHS</th>
                     <th>PRODI MHS</th>
                     <th>ALAMAT MHS</th>
-                    <th>STATUS PRODI</th>
                     <th>ACTION</th>
                 </tr>
             </thead>
@@ -37,12 +36,11 @@ include 'koneksi.php';
                 <?php
             while($baris=mysqli_fetch_assoc($hasil)){
                 ?>
-                <tr>
+                <tr?>
                     <td><?php echo $baris['id_mhs'];?></td>
                     <td><?php echo $baris['nama_mhs'];?></td>
                     <td><?php echo $baris['nama_prodi']; ?></td>
                     <td><?php echo $baris['alamat_mhs']; ?></td>
-                    <td><?php echo $baris['status_prodi']; ?></td>
                     <td>
                         <a href="update.php?id=<?php echo $baris['id_mhs'];?>">
                             <button type="button" class="btn btn-success">Ubah</button>
@@ -53,6 +51,7 @@ include 'koneksi.php';
                         </a>
 
                     </td>
+                    </tr>
 
 
                     <?php } ?>

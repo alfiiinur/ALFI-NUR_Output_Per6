@@ -9,7 +9,6 @@ if(isset($_GET['id']))
     $hasil = mysqli_query($koneksi, $sql);
     $result = mysqli_fetch_assoc($hasil);
 
-    // echo $result['nama_mhs'];
 }
 
 if(isset($_POST['nama_mhs'])){

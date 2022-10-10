@@ -7,9 +7,8 @@ if(isset($_POST['nama_mhs']))
     $nama = $_POST['nama_mhs'];
     $alamat = $_POST['alamat_mhs'];
     $prodi = $_POST['Prodi'];
-    $statusprodi = $_POST['status'];
-    $insert = "INSERT INTO tbl_mhs (id_prodi, nama_mhs, alamat_mhs)
-            VALUES($prodi, '$nama', '$alamat' )";
+    $insert = "INSERT INTO tbl_mhs
+            VALUES(null,$prodi, '$nama', '$alamat' )";
     
     mysqli_query($koneksi, $insert);
     header("Refresh:0 , url=index.php");
@@ -51,13 +50,13 @@ if(isset($_POST['nama_mhs']))
                     <option value="5">Kelatuan</option>
                 </select>
             </div>
-            <div class="mb-3">
+            <!-- <div class="mb-3">
                 <select class="form-select" aria-label="Default select example" name="status">
                     <option selected>Status</option>
                     <option value="1">Aktif</option>
                     <option value="2">Non Aktif</option>>
                 </select>
-            </div>
+            </div> -->
             <button type=" submit" class="btn btn-primary">Submit</button>
     </div>
 
